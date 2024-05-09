@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paddyrando</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="/img/abendessen.png">
+    <script src="script.js"></script>
+    <script src="template.js"></script>
+</head>
+<body onload="render(); renderBasket();">
+    <header>
+        <div class="header-content">
+            <div class="brand-container">
+                <img src="img/abendessen.png" alt="Lieferando-Logo">
+                <span>Paddyrando.de</span>
+            </div>
+            <span>Speisekarte</span>
+            <div class="flag-burger-menu-container">
+                <img src="img/germany.png" alt="german-flag">
+                <img src="img/burgermenu.png" alt="german-flag">
+            </div>
+        </div>  
+    </header>
+    
+
+    <section class="main-content">
+
+
+        <div class="menu">
+            <div class="background-image">
+                <img src="img/italian-cuisine-6903774_1280.jpg" alt="Pizza">
+            </div>
+            <div class="restaurant-info">
+                <div class="restaurant-info-flex-container">
+                    <div>
+                        <h2>Tasty Pizza</h2>
+                        <div class="valuation">
+                            <div class="stars">
+                                <img src="img/icons8-star-48.png" alt="stern">
+                                <img src="img/icons8-star-48.png" alt="stern">
+                                <img src="img/icons8-star-48.png" alt="stern">
+                                <img src="img/icons8-star-48.png" alt="stern">
+                                <img src="img/icons8-star-48.png" alt="stern">
+                            </div>
+                            <p>12.480 Reviews+</p>
+                        </div>
+                        <div class="delivery-conditions">
+                            <div class="minimum-order-value">
+                                <img src="img/icons8-basket-24.png" alt="Warenkorb">
+                                <p>Min 19,99€</p>
+                            </div>
+                            <div class="minimum-order-value">
+                                <img src="img/icons8-bicycle-24.png" alt="Fahrrad">
+                                <p>2,99€</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="logo-container">
+                        <img src="img/essen.png" alt="">
+                    </div>
+                    <div class="info-like-buttons">
+                        <div class="info">
+                            <img src="img/icons8-info-24.png" alt="info">
+                        </div>
+                        <div class="info">
+                            <img id="heartimage" src="img/herz-rot.png" alt="info">
+                        </div>
+                    </div>
+                </div>
+                <div class="calltoeat">
+                    <p id="calltoeat">Probieren Sie Hamburg's beste Pizza!</p>
+                </div>
+                <div class="search-and-quick-navigation-container">
+                    <input oninput="filterNames(); renderMenuIfNoInput()" type="text" id="search" placeholder="Finde dein Lieblingsgericht...">
+                    <nav>
+                        <a href="#category-headline1"><b>Pizza</b></a>
+                        <a href="#category-headline2"><b>Pasta</b></a>
+                        <a href="#category-headline3"><b>Desserts</b></a>
+                        <a href="#category-headline4"><b>Getränke</b></a>
+                    </nav>
+                </div>
+            </div>
+
+            <div id="render-menu" class="render-content">
+            </div>
+
+            <div class="mobile-basket-display" id="mobile-basket">
+            </div>
+
+        </div>
+
+        <div class="basket">
+
+                <div class="amount-dish-price-container" id="amount-dish-price-container">
+                </div>
+
+                <div class="total-sum-container" id="total-sum-container">
+                </div>
+
+        </div>
+
+
+    </section>
+
+    <section>
+        <div id="dialog" class="dialog-bg d-none"> <!-- Ist der Container der den overlayer erzeugt mit position absolute usw. wird angezeigt, wenn man auf den Papierkorb klickt, hat ansonsten die Klasse d-none-->
+
+            <div id="hallohans" class="dialog">
+                <div onclick="closeDialog()" class="exit-dialog">X</div> <!-- ist der Container, für die hinzugefügten Waren er liegt inerhalb des overlayers -->
+                <div class="mobile-basket-summary" id="mobile-basket-summary">
+
+                </div>
+
+                <div class="mobile-sum-to-pay-container" id="sum-to-pay-container">
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <footer>
+        <div class="footer-flex-container">
+            <p>Ein Restaurant empfehlen</p>
+            <p>Ein Restaurant anmelden</p>
+            <p>Ein Restaurant Jobs</p>
+            <p>AGB</p>
+            <p>Datenschutzerklärung</p>
+            <p>Impressum</p>
+            <p>Verwendung von Cookies</p>
+            <p>Bug Bounty</p>
+            <p>Ethik Hotline</p>
+        </div>
+    </footer>
+    
+</body>
+</html>
